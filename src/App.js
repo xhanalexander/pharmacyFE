@@ -1,39 +1,40 @@
 // import './App.css';
-import { Button, Table, Form, Nav, Navbar, Container } from 'react-bootstrap'
 import "bootstrap/dist/css/bootstrap.min.css"
-import axios from 'axios';
-import React, { useState, useEffect } from 'react';
-import moment from 'moment';
+import React, { useState, useEffect } from 'react'
+import { Button, Table, Navbar, Container, Nav } from 'react-bootstrap'
+import axios from 'axios'
+import moment from 'moment'
+import Transactions from "./pages/Transaction"
+import FormBuy from "./pages/FormBuy"
 
 function App() {
    const [data, setData] = useState([]);
 
    useEffect(() => {
-      axios.get('http://localhost:5000/api/get/obat')
-         .then((res) => {
-            const data = res.data.data;
-            setData(data)
-         })
+      axios.get('http://localhost:5000/api/get/obat').then((res) => {
+         const data = res.data.data;
+         setData(data)
+      })
          .catch((err) => console.log(err));
-   }, []);
+   }, [])
 
    console.log("data", data)
+
    return (
       <div className="bg-dark-subtle">
-         <header className="App-header bg-dark-subtle">
+         <header className="bg-dark-subtle">
+
             <Navbar bg="dark" variant="dark">
                <Container>
                   <Navbar.Brand href="#home">PharmacyUAS</Navbar.Brand>
                   <Nav className="me-auto">
-                     <Nav.Link href="#features">Features</Nav.Link>
-                     <Nav.Link href="#pricing">Pricing</Nav.Link>
+                     <Nav.Link href="#features">Transaction</Nav.Link>
                   </Nav>
                </Container>
             </Navbar>
 
-
             <div className='container-md p-8 m-10'>
-               <h1 className='text-left my-4'>Dashboard Drugstore</h1>
+               <h1 className='text-left my-4'>Dashboard</h1>
                <Table striped bordered hover size="sm" className='fs-6' >
                   <thead>
                      <tr>
@@ -64,11 +65,15 @@ function App() {
                      ))}
                   </tbody>
                </Table>
-
-               <Button variant="outline-primary" className='my-2 px-4' size="sm">Beli</Button>
+               <Button variant="outline-primary" className='my-2 px-4' size="sm" to="/">Beli</Button>
             </div>
+
+            <Transactions />
+
+            <FormBuy />
+
          </header>
-      </div>
+      </div >
    );
 }
 
