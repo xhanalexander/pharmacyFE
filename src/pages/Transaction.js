@@ -3,7 +3,6 @@ import React, { useState, useEffect } from 'react';
 import { Table } from 'react-bootstrap'
 import axios from 'axios'
 import moment from 'moment'
-import tableSortJs from "table-sort-js";
 
 function Transactions() {
    const [data, setData] = useState([]);
@@ -22,7 +21,7 @@ function Transactions() {
       <div>
          <div className='container-md p-8 m-10'>
             <h1 className='text-left my-4'>Transaction</h1>
-            <Table striped bordered hover size="sm" className='fs-6 table-sort' >
+            <Table striped bordered hover responsive size="sm" className='fs-6 table-sort' >
                <thead>
                   <tr>
                      <th>Bulan/Tahun</th>

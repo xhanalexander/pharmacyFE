@@ -19,7 +19,7 @@ function FormBuy() {
    function submit(e) {
       e.preventDefault()
       try {
-         axios.post('http://localhost:5000/api/post/obat', {
+         axios.post('http://localhost:5000/api/create/obat', {
             kode: data.kode,
             nama: data.nama,
             kategori: data.kategori,
@@ -41,13 +41,13 @@ function FormBuy() {
       setData(newdata)
    }
 
-   console.log(data)
+   // console.log(data)
    // https://www.digitalocean.com/community/tutorials/react-axios-react
    return (
       <div>
-         <div className='container-lg w-50 border border-2 rounded'>
+         <div className='container-fluid w-50 border border-2 rounded responsive'>
             <h1 className='text-center my-4'>Data Obat</h1>
-            <form action="" onSubmit={(e) => submit(e)} className="m-4">
+            <form action="/" onSubmit={(e) => submit(e)} className="m-4" method="POST">
                <Form.Group className="mb-3">
                   <Form.Label>Kode Obat</Form.Label>
                   <Form.Control type="text" onChange={(e) => handle(e)} value={data.kode} id="kode" placeholder="0A11" required/>
@@ -79,7 +79,6 @@ function FormBuy() {
                {/* <input type="text" onChange={(e) => handle(e)} value={data.} name="produsen" id="produsen" placeholder="PT" /> */}
                <div className="d-flex justify-content-center">
                   <button type="submit" className="btn btn-primary w-50 text-center">Submit</button>
-
                </div>
 
             </form>
