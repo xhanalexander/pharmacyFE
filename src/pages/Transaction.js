@@ -15,7 +15,7 @@ function Transactions() {
          .catch((err) => console.log(err));
    }, []);
 
-   console.log("data", data)
+   // console.log("data", data)
 
    return (
       <div>

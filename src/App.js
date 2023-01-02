@@ -18,7 +18,7 @@ function App() {
          .catch((err) => console.log(err));
    }, [])
 
-   console.log("data", data)
+   // console.log("data", data)
 
    return (
       <div className="bg-dark-subtle">
@@ -65,7 +65,7 @@ function App() {
                      ))}
                   </tbody>
                </Table>
-               <Button variant="outline-primary" className='my-2 px-4' size="sm" to="/">Beli</Button>
+               {/* <Button variant="outline-primary" className='my-2 px-4' size="sm" to="/">Beli</Button> */}
             </div>
 
             <Transactions />
