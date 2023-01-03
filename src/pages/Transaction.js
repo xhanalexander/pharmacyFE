@@ -5,6 +5,7 @@ import axios from 'axios'
 import moment from 'moment'
 
 function Transactions() {
+
    const [data, setData] = useState([]);
 
    useEffect(() => {

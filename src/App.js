@@ -65,7 +65,8 @@ function App() {
                      ))}
                   </tbody>
                </Table>
-               {/* <Button variant="outline-primary" className='my-2 px-4' size="sm" to="/">Beli</Button> */}
+               <Button variant="primary" className='my-2 px-4 fw-semibold' size="sm" to="/">Input Stock</Button>
+               <Button variant="primary" className='mx-4 px-4 fw-semibold' size="sm" to="/">Update Stock</Button>
             </div>
 
             <Transactions />
